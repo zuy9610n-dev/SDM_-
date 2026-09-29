@@ -1,0 +1,43 @@
+# 焼結拡散マルチプル法 粒度条件ファイル (例)
+# 各条件: 元素別 D50 [µm]、粒度分布幅 span=(D90-D10)/D50、熱処理条件
+conditions:
+  - name: fine_10um
+    d50_um: {Al: 10, Si: 10, Ti: 10, Fe: 10, Cu: 10}
+    span:   {Al: 1.0, Si: 1.0, Ti: 1.0, Fe: 1.0, Cu: 1.0}
+    sinter_temp_k: 873
+    sinter_time_s: 3600
+    anneal_temp_k: 823
+    anneal_time_s: 7200
+    note: 全元素 D50=10 µm の微粉
+
+  - name: medium_30um
+    d50_um: {Al: 30, Si: 30, Ti: 30, Fe: 30, Cu: 30}
+    sinter_temp_k: 873
+    sinter_time_s: 3600
+    anneal_temp_k: 823
+    anneal_time_s: 7200
+    note: 全元素 D50=30 µm
+
+  - name: coarse_75um
+    d50_um: {Al: 75, Si: 75, Ti: 75, Fe: 75, Cu: 75}
+    sinter_temp_k: 873
+    sinter_time_s: 3600
+    anneal_temp_k: 823
+    anneal_time_s: 7200
+    note: 全元素 D50=75 µm の粗粉
+
+  - name: mixed_fineAlCu_coarseTiFe
+    d50_um: {Al: 15, Si: 30, Ti: 60, Fe: 60, Cu: 15}
+    sinter_temp_k: 873
+    sinter_time_s: 3600
+    anneal_temp_k: 823
+    anneal_time_s: 7200
+    note: 低融点元素 (Al, Cu) を微粉、高融点元素 (Ti, Fe) を粗粉
+
+  - name: mixed_coarseAlCu_fineTiFe
+    d50_um: {Al: 60, Si: 30, Ti: 15, Fe: 15, Cu: 60}
+    sinter_temp_k: 873
+    sinter_time_s: 3600
+    anneal_temp_k: 823
+    anneal_time_s: 7200
+    note: 高融点元素 (Ti, Fe) を微粉にした逆配置

@@ -1,0 +1,18 @@
+# 解析パラメータ (例)
+analysis:
+  elements: [Al, Si, Ti, Fe, Cu]
+  bin_width_at: 5.0            # 組成空間グリッド刻み [at%]
+  min_points_per_bin: 5
+  dbscan_eps_at: 3.0           # 相候補クラスタ検出の近傍半径 [at%]
+  dbscan_min_samples: 8
+  pure_threshold_at: 95.0      # 主元素 >= 95 at% を未拡散とみなす
+  interdiffusion_min_elements: 3
+  significant_at: 2.0          # 2 at% 以上を「有意」とみなす
+  normalize: true
+
+simulation:
+  field_size_um: 500
+  n_points: 2000
+  eds_noise_at: 0.8
+  phase_attraction: 0.35
+  random_state: 42

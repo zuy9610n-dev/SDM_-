@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdm_grain"
+version = "0.1.0"
+description = "焼結拡散マルチプル法 (SDM) における粉末粒度調整の影響を自動解析するツール"
+readme = "Readme.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "pandas>=2.0",
+  "matplotlib>=3.7",
+  "scikit-learn>=1.3",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+sdm-grain = "sdm_grain.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sdm_grain*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
